@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> Graficas Brazo Robot </h1>
+<h2> Reto del System Control </h2>
+<h3> Lucio Arturo Reyes Castillo A01378985 </h3> 
+
+
+<canvas id="miChart" style="width:90%; max-width:3000px"></canvas>
+<button onclick="miFun()">Primera</button>
+<button onclick="miFun2()">Segunda</button>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script> 
+
+var miChart; 
+
+function miFun() {
+    var xVal = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    
+    if (miChart) {
+        miChart.destroy();
+    }
+
+    miChart = new Chart("miChart", {
+        type : "line", 
+        data : {
+            labels : xVal,
+            datasets : [{
+                data : [null, null, null, null, 2,4,6,8,10,12,14,16,18],
+                borderColor : "red",
+                fill : false}, {
+                data : [null, null, null, null, null,null,null,null,null,null,null,null,18,19,20,21,22],
+                borderColor : "green",
+                fill : false},{
+                data : [null, null, null, null, null,null,null,null,null,null, null,null,null,null,null,null,22,19,16,13,10],
+                borderColor : "blue",
+                fill : false
+            }]
+        },
+        options : {
+            legend : {display: false}
+        }});
+}
+
+
+function miFun2() {
+    var xVal2 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    
+    if (miChart) {
+        miChart.destroy();
+    }
+
+    miChart = new Chart("miChart", {
+        type : "line", 
+        data : {
+            labels : xVal2,
+            datasets : [{
+                data : [-2,-4,-6,-8,-10,-12,-14,-16,-18,-20],
+                borderColor : "red",
+                fill : false}, {
+                data : [-2,-2,-2,-2,-2,-2,-2,-2,-2,-2],
+                borderColor : "green",
+                fill : false}, {
+                data : [null, null, null, null, null, null, null, null, null, -2,-1,0,1,2],
+                borderColor : "blue",
+                fill : false
+            }]},
+        options : {
+            legend : {display: false}
+        }});
+}
+
+</script>
+</body>
+</html>
